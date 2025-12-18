@@ -12,7 +12,8 @@
   ],
   "scripts": {
     "lint": "eslint .",
-    "example": "postcss example/input.css --config example/postcss.config.cjs --output example/dist/output.css"
+    "example": "postcss example/input.css --config example/postcss.config.cjs --output example/dist/output.css",
+    "test": "npm run lint && npm run example && diff -u example/dist/output.css example/dist/output.expected.css"
   },
   "keywords": [
     "postcss",
@@ -31,6 +32,7 @@
     "postcss": "^8.4.0"
   },
   "devDependencies": {
+    "eslint": "^9.39.1",
     "postcss-cli": "^11.0.0"
   }
 }
